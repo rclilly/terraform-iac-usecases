@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "ap-southeast-1"
+  region = "us-west-2"
   ## if you want to mention the aws credential from different path, enable below line
   #shared_credentials_file = "$HOME/.aws/credentials"
   profile = "ansible"
@@ -7,7 +7,7 @@ provider "aws" {
 }
 
 resource "aws_key_pair" "ec2loginkey" {
-  key_name = "login-key"
+  key_name = "learn_rsa"
   ## change here if you are using different key pair
   public_key = file(pathexpand(var.ssh_key_pair_pub))
 }
