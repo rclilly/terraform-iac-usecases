@@ -50,7 +50,7 @@ resource "aws_instance" "ansible-engine" {
   }
 
   # Execute Ansible Playbook
-  provisioner "remote-exec" {
+  /*   provisioner "remote-exec" {
     inline = [
       "sleep 120; ansible-playbook engine-config.yaml"
     ]
@@ -60,8 +60,10 @@ resource "aws_instance" "ansible-engine" {
       private_key = file(pathexpand(var.ssh_key_pair))
       host        = self.public_ip
     }
+  } */
+  provisioner "local-exec" {
+    command = "ansible-playbook engine-config.yaml"
   }
-
   tags = {
     Name = "ansible-engine"
   }
