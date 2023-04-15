@@ -2,7 +2,7 @@ provider "aws" {
   region = "us-west-2"
   ## if you want to mention the aws credential from different path, enable below line
   #shared_credentials_file = "$HOME/.aws/credentials"
-  profile = "ansible"
+  profile = "learn"
   #version                 = ">=2.0"
 }
 
